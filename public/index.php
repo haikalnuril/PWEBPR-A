@@ -1,3 +1,9 @@
+<?php
+require_once 'contact.php';
+$arr = Contact::select();
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,7 +21,7 @@
   <nav class="bg-[#F9F6EE] dark:bg-gray-900 border-b-4 border-black">
     <div class="max-w-screen-xl flex flex-wrap items-center justify-center mx-auto p-4">
     <div class="absolute md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse right-20">
-      <a href="login.html" class="text-purple-400 text-xl border-t-2 border-l-2 border-b-4 border-r-4 border-purple-400 bg-[#F9F6EE] hover:bg-purple-400 hover:text-white  focus:ring-4 focus:outline-none focus:ring-purple-200 font-medium rounded-lg px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">LOGOUT</a>
+      <a href="login.php" class="text-purple-400 text-xl border-t-2 border-l-2 border-b-4 border-r-4 border-purple-400 bg-[#F9F6EE] hover:bg-purple-400 hover:text-white  focus:ring-4 focus:outline-none focus:ring-purple-200 font-medium rounded-lg px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">LOGOUT</a>
     </div>
     <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1 ml-" id="navbar-cta">
       <ul class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-[#F9F6EE] md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-[#F9F6EE] dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
@@ -127,88 +133,39 @@
               </tr>
           </thead>
           <tbody>
-              <tr class="bg-purple-400 border-b border-black dark:bg-gray-800 dark:border-gray-700">
-                  <th scope="row" class="px-6 py-4 font-medium text-lg text-gray-900 whitespace-nowrap dark:text-white">
-                      1
-                  </th>
-                  <td class="px-6 py-4 text-lg font-medium text-gray-900">
-                      Haikal Nuril Abiyit
-                  </td>
-                  <td class="px-6 py-4 text-lg font-medium text-gray-900">
-                    08953705*****
-                  </td>
-                  <td class="px-6 py-4 flex gap-x-3">
-                      <a href="#" class="font-medium text-lg bg-[#BAFCA2] rounded-md border-t-2 border-l-2 border-b-4 border-r-4 border-black hover:underline"><i><svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                        <path stroke="currentColor" stroke-width="2" d="M21 12c0 1.2-4.03 6-9 6s-9-4.8-9-6c0-1.2 4.03-6 9-6s9 4.8 9 6Z"/>
-                        <path stroke="currentColor" stroke-width="2" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/>
-                      </svg>
-                      </i></a>
-                      <a href="#" class="font-medium text-lg bg-[#FAAB36] rounded-md border-t-2 border-l-2 border-b-4 border-r-4 border-black dark:text-blue-500 hover:underline"><i><svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m14.304 4.844 2.852 2.852M7 7H4a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1v-4.5m2.409-9.91a2.017 2.017 0 0 1 0 2.853l-6.844 6.844L8 14l.713-3.565 6.844-6.844a2.015 2.015 0 0 1 2.852 0Z"/>
-                      </svg>
-                      
-                      </i></a>
-                      <a href="#" class="font-medium text-lg bg-[#FF69B4] rounded-md border-t-2 border-l-2 border-b-4 border-r-4 border-black dark:text-blue-500 hover:underline"><i><svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 7h14m-9 3v8m4-8v8M10 3h4a1 1 0 0 1 1 1v3H9V4a1 1 0 0 1 1-1ZM6 7h12v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7Z"/>
-                      </svg>
-                      </i></a>
-                  </td>
-              </tr>
-              <tr class="bg-purple-400 border-b border-black dark:bg-gray-800 dark:border-gray-700">
-                  <th scope="row" class="px-6 py-4 font-medium text-lg text-gray-900 whitespace-nowrap dark:text-white">
-                      2
-                  </th>
-                  <td class="px-6 py-4 text-lg font-medium text-gray-900">
-                    Haikal Nuril Abiyit
-                  </td>
-                  <td class="px-6 py-4 text-lg font-medium text-gray-900">
-                    08953705*****
-                  </td>
-                  <td class="px-6 py-4 flex gap-x-3">
-                    <a href="#" class="font-medium text-lg bg-[#BAFCA2] rounded-md border-t-2 border-l-2 border-b-4 border-r-4 border-black hover:underline"><i><svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                      <path stroke="currentColor" stroke-width="2" d="M21 12c0 1.2-4.03 6-9 6s-9-4.8-9-6c0-1.2 4.03-6 9-6s9 4.8 9 6Z"/>
-                      <path stroke="currentColor" stroke-width="2" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/>
-                    </svg>
-                    </i></a>
-                    <a href="#" class="font-medium text-lg bg-[#FAAB36] rounded-md border-t-2 border-l-2 border-b-4 border-r-4 border-black dark:text-blue-500 hover:underline"><i><svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m14.304 4.844 2.852 2.852M7 7H4a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1v-4.5m2.409-9.91a2.017 2.017 0 0 1 0 2.853l-6.844 6.844L8 14l.713-3.565 6.844-6.844a2.015 2.015 0 0 1 2.852 0Z"/>
-                    </svg>
-                    
-                    </i></a>
-                    <a href="#" class="font-medium text-lg bg-[#FF69B4] rounded-md border-t-2 border-l-2 border-b-4 border-r-4 border-black dark:text-blue-500 hover:underline"><i><svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 7h14m-9 3v8m4-8v8M10 3h4a1 1 0 0 1 1 1v3H9V4a1 1 0 0 1 1-1ZM6 7h12v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7Z"/>
-                    </svg>
-                    </i></a>
-                  </td>
-              </tr>
-              <tr class="bg-purple-400 dark:bg-gray-800">
-                  <th scope="row" class="px-6 py-4 font-medium text-lg text-gray-900 whitespace-nowrap dark:text-white">
-                      3
-                  </th>
-                  <td class="px-6 py-4 text-lg font-medium text-gray-900">
-                    Haikal Nuril Abiyit
-                  </td>
-                  <td class="px-6 py-4 text-lg font-medium text-gray-900">
-                      08953705*****
-                  </td>
-
-                  <td class="px-6 py-4 flex gap-x-3">
-                    <a href="#" class="font-medium text-lg bg-[#BAFCA2] rounded-md border-t-2 border-l-2 border-b-4 border-r-4 border-black hover:underline"><i><svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                      <path stroke="currentColor" stroke-width="2" d="M21 12c0 1.2-4.03 6-9 6s-9-4.8-9-6c0-1.2 4.03-6 9-6s9 4.8 9 6Z"/>
-                      <path stroke="currentColor" stroke-width="2" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/>
-                    </svg>
-                    </i></a>
-                    <a href="#" class="font-medium text-lg bg-[#FAAB36] rounded-md border-t-2 border-l-2 border-b-4 border-r-4 border-black dark:text-blue-500 hover:underline"><i><svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m14.304 4.844 2.852 2.852M7 7H4a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1v-4.5m2.409-9.91a2.017 2.017 0 0 1 0 2.853l-6.844 6.844L8 14l.713-3.565 6.844-6.844a2.015 2.015 0 0 1 2.852 0Z"/>
-                    </svg>
-                    
-                    </i></a>
-                    <a href="#" class="font-medium text-lg bg-[#FF69B4] rounded-md border-t-2 border-l-2 border-b-4 border-r-4 border-black dark:text-blue-500 hover:underline"><i><svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 7h14m-9 3v8m4-8v8M10 3h4a1 1 0 0 1 1 1v3H9V4a1 1 0 0 1 1-1ZM6 7h12v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7Z"/>
-                    </svg>
-                    </i></a>
-                  </td>
-              </tr>
+              <?php
+                for ($i = 0; $i < count($arr['id']); $i++){
+              ?>
+                  <tr class="bg-purple-400 border-b border-black dark:bg-gray-800 dark:border-gray-700">
+                      <th scope="row" class="px-6 py-4 font-medium text-lg text-gray-900 whitespace-nowrap dark:text-white">
+                          <?= $i+1 ?>
+                      </th>
+                      <td class="px-6 py-4 text-lg font-medium text-gray-900">
+                          <?= $arr['owner'][$i] ?>
+                      </td>
+                      <td class="px-6 py-4 text-lg font-medium text-gray-900">
+                          <?= $arr['no_hp'][$i] ?>
+                      </td>
+                      <td class="px-6 py-4 flex gap-x-3">
+                          <a href="#" class="font-medium text-lg bg-[#BAFCA2] rounded-md border-t-2 border-l-2 border-b-4 border-r-4 border-black hover:underline"><i><svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                            <path stroke="currentColor" stroke-width="2" d="M21 12c0 1.2-4.03 6-9 6s-9-4.8-9-6c0-1.2 4.03-6 9-6s9 4.8 9 6Z"/>
+                            <path stroke="currentColor" stroke-width="2" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/>
+                          </svg>
+                          </i></a>
+                          <a href="#" class="font-medium text-lg bg-[#FAAB36] rounded-md border-t-2 border-l-2 border-b-4 border-r-4 border-black dark:text-blue-500 hover:underline"><i><svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m14.304 4.844 2.852 2.852M7 7H4a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1v-4.5m2.409-9.91a2.017 2.017 0 0 1 0 2.853l-6.844 6.844L8 14l.713-3.565 6.844-6.844a2.015 2.015 0 0 1 2.852 0Z"/>
+                          </svg>
+                          
+                          </i></a>
+                          <a href="#" class="font-medium text-lg bg-[#FF69B4] rounded-md border-t-2 border-l-2 border-b-4 border-r-4 border-black dark:text-blue-500 hover:underline"><i><svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 7h14m-9 3v8m4-8v8M10 3h4a1 1 0 0 1 1 1v3H9V4a1 1 0 0 1 1-1ZM6 7h12v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7Z"/>
+                          </svg>
+                          </i></a>
+                      </td>
+                  </tr>
+              <?php
+                  }
+              ?>    
           </tbody>
       </table>
     </div>
