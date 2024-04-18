@@ -35,7 +35,7 @@
                         </div>
                         <button type="submit" class="w-full text-white text-xl font-extrabold bg-[#F7BE38] border-t-2 border-l-2 border-b-8 border-r-8 border-black rounded-xl hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Create an account</button>
                         <p class="text-sm font-light text-gray-900 dark:text-gray-400">
-                            Already have an account? <a href="login.html" class="font-medium text-[#BAFCA2] hover:underline dark:text-primary-500">Login here</a>
+                            Already have an account? <a href="login.php" class="font-medium text-[#BAFCA2] hover:underline dark:text-primary-500">Login here</a>
                         </p>
                     </form>
                 </div>

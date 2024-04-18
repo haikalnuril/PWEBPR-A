@@ -1,5 +1,5 @@
 <?php
-require_once 'contact.php';
+require_once __DIR__ . '/../app/models/contact.php';
 $arr = Contact::select();
 ?>
 
@@ -110,7 +110,9 @@ $arr = Contact::select();
   </div>
 </aside>
 
-<div class="p-4 sm:ml-64">*</div>
+<div class="p-4 sm:ml-64">
+  <a href="create.php">create</a>
+</div>
 
 <div class="p-4 sm:ml-64">
   <!-- <div class="p-4 border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700"> -->
