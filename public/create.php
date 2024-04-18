@@ -53,20 +53,20 @@
         <h2 class="font-medium text-4xl">Input Data</h2>
         <form action="<?php echo $_SERVER["PHP_SELF"];?>" method="post">
             <div class="form-group mt-3">
-                <label>User_id:</label>
+                <label>User_id :</label>
                 <input type="text" name="user_id" class="w-full border-4 rounded-lg" placeholder="User Id" required />
 
             </div>
             <div class="form-group">
-                <label>Owner:</label>
+                <label>Owner :</label>
                 <input type="text" name="owner" class="w-full border-4 rounded-lg" placeholder="Owner name" required/>
             </div>
             <div class="form-group">
-                <label>No HP:</label>
+                <label>No HP :</label>
                 <input type="text" name="no_hp" class="w-full border-4 rounded-lg" placeholder="Your No HP" required/>
             </div>
             <div class="form-group">
-                <label>Email:</label>
+                <label>Email :</label>
                 <textarea name="email" class="w-full border-black border-2 rounded-xl " rows="5"placeholder="Email@example.com" required></textarea>
             </div>       
 
