@@ -27,14 +27,14 @@
                             <input type="password" name="password" id="password" placeholder="••••••••" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required="">
                         </div>
 
-                        <button type="submit" class="w-full text-white text-xl font-extrabold bg-[#F7BE38] border-t-2 border-l-2 border-b-8 border-r-8 border-black rounded-xl hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Create an account</button>
+                        <button type="submit" class="w-full text-white text-xl font-extrabold bg-[#F7BE38] border-t-2 border-l-2 border-b-8 border-r-8 border-black rounded-xl hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Login</button>
                         <p class="text-sm font-light text-gray-900 dark:text-gray-400">
                             Don't have an account yet? <a href="register.php" class="font-medium text-[#BAFCA2] hover:underline dark:text-primary-500">Register here</a>
                         </p>
                     </form>
                 </div>
             </div>
-            <div class="bg-[#F7BE38] absolute rounded-2xl  h-1/2 w-1/3 top-[275px] left-[560px] -z-10 border-4 border-black">
+            <div class="bg-[#F7BE38] absolute rounded-2xl  h-1/2 w-1/3 top-[275px] left-[560px] -z-10 border-t-4 border-l-2 border-b-8 border-r-8 border-black">
     
             </div>
         </div>

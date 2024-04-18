@@ -7,7 +7,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
 
 </head>
-<body class="bg-[#F9F6EE]">
+<body style="background-color: #BAFCA2;">
 <div class="container">
     <?php
 
@@ -89,7 +89,7 @@
 
             <input type="hidden" name="id" value="<?php echo $data['id']; ?>" />
 
-            <button type="submit" name="submit" class="w-full px-3 py-2 bg-purple-400 rounded-xl border-black border-l-2 border-t-2 border-b-8 border-r-8">Update</button>
+            <button type="submit" name="submit" class="w-full px-3 py-2 bg-purple-400 rounded-xl border-black border-l-2 border-t-2 border-b-8 border-r-8 font-bold">Update</button>
         </form>
     </div>
 </div>

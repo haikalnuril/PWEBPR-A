@@ -6,7 +6,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
 </head>
-<body class="bg-[#F9F6EE]">
+<body style="background-color: #87CEEB;">
 <div class="container">
     <?php
     //Include file koneksi, untuk koneksikan ke database
@@ -70,7 +70,7 @@
                 <textarea name="email" class="w-full border-black border-2 rounded-xl " rows="5"placeholder="Email@example.com" required></textarea>
             </div>       
 
-            <button type="submit" name="submit" class="w-full px-3 py-2 bg-purple-400 rounded-xl border-black border-l-2 border-t-2 border-b-8 border-r-8">Submit</button>
+            <button type="submit" name="submit" class="w-full px-3 py-2 bg-purple-400 rounded-xl border-black border-l-2 border-t-2 border-b-8 border-r-8 font-bold">Submit</button>
         </form>
     </div>
 </div>

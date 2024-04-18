@@ -41,7 +41,7 @@
                 </div>
             </div>
         </div>
-        <div class="bg-[#F7BE38] absolute rounded-2xl  h-2/3 w-1/3 top-[204px] left-[560px] -z-10 border-4 border-black">
+        <div class="bg-[#F7BE38] absolute rounded-2xl  h-2/3 w-1/3 top-[204px] left-[560px] -z-10 border-t-4 border-l-2 border-b-8 border-r-8 border-black">
 
         </div>
     </div>

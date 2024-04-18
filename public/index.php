@@ -20,7 +20,7 @@ Contact::delete();
     <!-- font -->
 
   </head>
-<body class="bg-[#F9F6EE]">
+<body class="" style="background-color: #87CEEB;">
 
   <nav class="bg-[#F9F6EE] dark:bg-gray-900 border-b-4 border-black">
     <div class="max-w-screen-xl flex flex-wrap items-center justify-center mx-auto p-4">
