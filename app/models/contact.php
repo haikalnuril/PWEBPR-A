@@ -18,7 +18,7 @@ Class Contact{
         return $arr;
     }
     static function update(){
-        
+        //ada di dalam file update.php
     }
     static function delete(){
         global $conn;
