@@ -20,7 +20,7 @@ Contact::delete();
     <!-- font -->
 
   </head>
-<body class="bg-[#BAFCA2]">
+<body class="bg-[#F9F6EE]">
 
   <nav class="bg-[#F9F6EE] dark:bg-gray-900 border-b-4 border-black">
     <div class="max-w-screen-xl flex flex-wrap items-center justify-center mx-auto p-4">
@@ -114,8 +114,8 @@ Contact::delete();
   </div>
 </aside>
 
-<div class="p-4 sm:ml-64">
-  <a href="create.php">create</a>
+<div class="p-4 sm:ml-64 ">
+  <a href="create.php" class="font-bold pl-2 pr-4 pb-1 bg-[#BAFCA2] border-black border-l-2 border-t-2 border-b-8 border-r-8 text-2xl rounded-xl"> <b>+</b> CREATE</a>
 </div>
 
 <div class="p-4 sm:ml-64">
@@ -153,11 +153,6 @@ Contact::delete();
                           <?= $arr['no_hp'][$i] ?>
                       </td>
                       <td class="px-6 py-4 flex gap-x-3">
-                          <a href="#" class="font-medium text-lg bg-[#BAFCA2] rounded-md border-t-2 border-l-2 border-b-4 border-r-4 border-black hover:underline"><i><svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                            <path stroke="currentColor" stroke-width="2" d="M21 12c0 1.2-4.03 6-9 6s-9-4.8-9-6c0-1.2 4.03-6 9-6s9 4.8 9 6Z"/>
-                            <path stroke="currentColor" stroke-width="2" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/>
-                          </svg>
-                          </i></a>
                           <a href="update.php?id=<?php echo htmlspecialchars($arr['id'][$i]); ?>" class="font-medium text-lg bg-[#FAAB36] rounded-md border-t-2 border-l-2 border-b-4 border-r-4 border-black dark:text-blue-500 hover:underline"><i><svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m14.304 4.844 2.852 2.852M7 7H4a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1v-4.5m2.409-9.91a2.017 2.017 0 0 1 0 2.853l-6.844 6.844L8 14l.713-3.565 6.844-6.844a2.015 2.015 0 0 1 2.852 0Z"/>
                           </svg>
