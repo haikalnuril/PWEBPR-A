@@ -8,8 +8,7 @@
 <div class="container">
     <?php
     //Include file koneksi, untuk koneksikan ke database
-    require_once __DIR__ . '/../app/models/database.php';
-
+    
     //Fungsi untuk mencegah inputan karakter yang tidak sesuai
     function input($data) {
         $data = trim($data);
@@ -17,31 +16,36 @@
         $data = htmlspecialchars($data);
         return $data;
     }
-    //Cek apakah ada kiriman form dari method post
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    class Contact{
+        static function insert(){
+            require_once __DIR__ . '/../app/models/database.php';
+            if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        
+                $user_id=input($_POST["user_id"]);
+                $owner=input($_POST["owner"]);
+                $no_hp=input($_POST["no_hp"]);
+                $email=input($_POST["email"]);
+        
+                $sql="insert into laporan (user_id,owner,no_hp,email) values
+                ('$user_id','$owner','$no_hp','$email')";
 
-        $user_id=input($_POST["user_id"]);
-        $owner=input($_POST["owner"]);
-        $no_hp=input($_POST["no_hp"]);
-        $email=input($_POST["email"]);
+                $hasil=mysqli_query($conn,$sql);
+        
 
-        //Query input menginput data kedalam tabel anggota
-        $sql="insert into laporan (user_id,owner,no_hp,email) values
-		('$user_id','$owner','$no_hp','$email')";
-
-        //Mengeksekusi/menjalankan query diatas
-        $hasil=mysqli_query($conn,$sql);
-
-        //Kondisi apakah berhasil atau tidak dalam mengeksekusi query diatas
-        if ($hasil) {
-            header("Location:index.php");
+                if ($hasil) {
+                    header("Location:index.php");
+                }
+                else {
+                    echo "<div class='alert alert-danger'> Data Gagal disimpan.</div>";
+        
+                }
+        
+            }
+            
         }
-        else {
-            echo "<div class='alert alert-danger'> Data Gagal disimpan.</div>";
-
-        }
-
     }
+
+    Contact::insert()
     ?>
     <h2>Input Data</h2>
 

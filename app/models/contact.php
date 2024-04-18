@@ -17,14 +17,27 @@ Class Contact{
         }
         return $arr;
     }
-    static function insert(){
-  
-    }
     static function update(){
-  
+        
     }
     static function delete(){
-  
+        global $conn;
+        if (isset($_GET['id'])) {
+            $id=htmlspecialchars($_GET["id"]);
+      
+            $sql="delete from laporan where id='$id' ";
+            $hasil=mysqli_query($conn,$sql);
+      
+            //Kondisi apakah berhasil atau tidak
+                if ($hasil) {
+                    header("Location:index.php");
+      
+                }
+                else {
+                    echo "<div class='alert alert-danger'> Data Gagal dihapus.</div>";
+      
+                }
+            }
     }
   }
 
