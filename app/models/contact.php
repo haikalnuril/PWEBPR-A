@@ -20,6 +20,33 @@ Class Contact{
     static function update(){
         //ada di dalam file update.php
     }
+    static function insert(){
+        require_once __DIR__ . '/../app/models/database.php';
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    
+            $user_id=input($_POST["user_id"]);
+            $owner=input($_POST["owner"]);
+            $no_hp=input($_POST["no_hp"]);
+            $email=input($_POST["email"]);
+    
+            $sql="insert into laporan (user_id,owner,no_hp,email) values
+            ('$user_id','$owner','$no_hp','$email')";
+
+            $hasil=mysqli_query($conn,$sql);
+    
+
+            if ($hasil) {
+                header("Location:index.php");
+            }
+            else {
+                echo "<div class='alert alert-danger'> Data Gagal disimpan.</div>";
+    
+            }
+    
+        }
+        
+    }
+
     static function delete(){
         global $conn;
         if (isset($_GET['id'])) {
@@ -38,6 +65,7 @@ Class Contact{
       
                 }
             }
+        
     }
   }
 
