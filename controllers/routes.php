@@ -1,5 +1,9 @@
 <?php
 
+include_once 'function/main.php';
+include_once 'app/config/static.php';
+include_once 'controllers/main.php';
+
 // Auth
 Router::url('login', 'get', 'AuthController::login');
 Router::url('login', 'post', 'AuthController::sessionLogin');
@@ -18,3 +22,5 @@ Router::url('dashboard/delete-contact', 'post', 'ContactController::deleteContac
 Router::url('/', 'get', function () {
     header('Location: login');
 });
+
+new Router();

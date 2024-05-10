@@ -1,24 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Urielism | Login</title>
-
-    <link rel="stylesheet" href="css/style.css">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
-</head>
 <body class="bg-[#BAFCA2] mx-auto">
 
     <div class="container flex justify-center items-center h-screen mx-auto relative">
         <div class="bg-purple-400 h-1/2 w-1/3 rounded-2xl border-4 border-black">
-            <div class="w-full flex justify-center md:mt-0 = xl:p-0 dark:bg-gray-800 dark:border-gray-700">
+            <div class="w-full flex justify-center md:mt-0 = xl:p-0 ">
                 <div class="mt-12">
                     <h1 class="text-5xl font-extrabold text-center w-80 leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
                         Login
                     </h1>
-                    <form class="mt-10 space-y-4 md:space-y-6" action="#">
+                    <form class="mt-10 space-y-4 md:space-y-6" action="<?= urlpath('login') ?>" method="POST">
                         <div>
                             <label for="email" class="block mb-2 text-xl font-extrabold text-gray-900 dark:text-white">Your email</label>
                             <input type="email" name="email" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="name@company.com" required="">
@@ -43,4 +32,3 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
 </body>
-</html>

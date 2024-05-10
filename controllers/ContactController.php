@@ -1,5 +1,5 @@
 <?php
-include_once 'models/contact.php';
+include_once 'app/models/contact.php';
 
 class ContactController
 {

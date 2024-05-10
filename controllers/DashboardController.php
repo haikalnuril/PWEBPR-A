@@ -1,6 +1,6 @@
 <?php
-include_once 'function/main.php';
-include_once 'models/contact.php';
+
+include_once 'app/models/contact.php';
 
 class DashboardController {
     static function index() {
@@ -9,7 +9,7 @@ class DashboardController {
             exit;
         }
         else {
-            view('dashboard', ['contacts' => Contact::select($_SESSION['user']['id'])]);
+            view('dashboard/layout', ['url' => 'dashboard' ,'contacts' => Contact::select($_SESSION['user']['id'])]);
         }
     }
 }

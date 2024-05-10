@@ -3,7 +3,7 @@
 function view($page, $data = [])
 {
     extract($data);
-    include 'resources/views/' . $page . '.php';
+    include 'public/' . $page . '.php';
 }
 
 class Router

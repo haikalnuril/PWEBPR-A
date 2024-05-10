@@ -1,18 +1,17 @@
 <?php
-require_once 'database.php';
+
+include_once 'app/config/conn.php';
 
 Class Contact{ 
     static function select(){
         global $conn;
         $sql = "SELECT * FROM laporan";
         $result = $conn->query($sql);
-        $arr = array();
+        $arr = [];
 
         if($result->num_rows > 0) {
-            while ($row = mysqli_fetch_assoc($result)){
-                foreach ($row as $key => $value){
-                    $arr[$key][] = $value;
-                }
+            while ($row = $result->fetch_assoc()){
+                $arr[] = $row;
             }
         }
         return $arr;
@@ -21,7 +20,7 @@ Class Contact{
         //ada di dalam file update.php
     }
     static function insert(){
-        require_once __DIR__ . '/../app/models/database.php';
+        global $conn;
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
             $user_id=input($_POST["user_id"]);

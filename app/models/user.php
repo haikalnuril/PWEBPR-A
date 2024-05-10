@@ -1,5 +1,6 @@
 <?php
-include_once __DIR__ . '/../app/config/db_connect.php';
+
+include_once 'app/config/conn.php';
 
 class User
 {
@@ -7,10 +8,10 @@ class User
     {
         global $conn;
     
-        $username = $data['username'];
+        $email = $data['email'];
         $password = $data['password'];
     
-        $result = $conn->query("SELECT * FROM users WHERE username = '$username'");
+        $result = $conn->query("SELECT * FROM users WHERE email = '$email'");
         if ($result = $result->fetch_assoc()) {
             $hashedPassword = $result['password'];
             $verify = password_verify($password, $hashedPassword);
@@ -26,28 +27,26 @@ class User
     {
         global $conn;
 
-        $username = $data['username'];
+        $name = $data['name'];
         $password = $data['password'];
-        $full_name = $data['full_name'];
-        $phone = $data['phone'];
         $email = $data['email'];
 
         $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
-        $sql = "INSERT INTO users SET full_name = ?, username = ?, password = ?, phone = ?, email = ?";
+        $sql = "INSERT INTO users SET name = ?, password = ?, email = ?";
         $stmt = $conn->prepare($sql);
-        $stmt->bind_param('sssss', $full_name, $username, $hashedPassword, $phone, $email);
+        $stmt->bind_param('sss', $name, $hashedPassword, $email);
         $stmt->execute();
 
         $result = $stmt->affected_rows > 0 ? true : false;
         return $result;
     }
 
-    static function getPassword($username)
+    static function getPassword($name)
     {
         global $conn;
-        $sql = "SELECT password FROM users WHERE username = ?";
+        $sql = "SELECT password FROM users WHERE name = ?";
         $stmt = $conn->prepare($sql);
-        $stmt->bind_param('s', $username);
+        $stmt->bind_param('s', $name);
         $stmt->execute();
 
         $result = $stmt->affected_rows > 0 ? true : false;

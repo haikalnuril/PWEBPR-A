@@ -1,22 +1,22 @@
 <?php
-include_once 'models/user.php';
+include_once 'app/models/user.php';
 include_once 'function/main.php';
 include_once 'app/config/static.php';
 
 class AuthController {
     static function login() {
-        view('auth/auth_layout', ['url' => 'login']);
+        view('auth/layout', ['url' => 'login']);
     }
 
     static function register() {
-        view('auth/auth_layout', ['url' => 'register']);
+        view('auth/layout', ['url' => 'register']);
     }
 
     static function sessionLogin() {
         $post = array_map('htmlspecialchars', $_POST);
 
         $user = User::login([
-            'username' => $post['username'], 
+            'email' => $post['email'], 
             'password' => $post['password']
         ]);
         if ($user) {
@@ -32,10 +32,15 @@ class AuthController {
     static function newRegister() {
         $post = array_map('htmlspecialchars', $_POST);
 
+        if ($post['password'] !== $post['confirm-password']) {
+            header('Location: ' . BASEURL . 'register?failed=true');
+            exit;
+        }
+
         $user = User::register([
-            'full_name' => $post['full_name'],
-            'phone' => $post['phone'],
-            'email' => $post['email']
+            'name' => $post['name'],
+            'email' => $post['email'],
+            'password' => $post['password'],
         ]);
 
         if ($user) {
