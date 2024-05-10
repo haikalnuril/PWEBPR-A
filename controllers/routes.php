@@ -14,9 +14,11 @@ Router::url('logout', 'get', 'AuthController::logout');
 
 // Dashboard
 Router::url('dashboard', 'get', 'DashboardController::index');
+Router::url('dashboard/add-contact', 'get', 'ContactController::addindex');
 Router::url('dashboard/add-contact', 'post', 'ContactController::createContact');
+Router::url('dashboard/edit-contact', 'get', 'ContactController::updateindex');
 Router::url('dashboard/edit-contact', 'post', 'ContactController::updateContact');
-Router::url('dashboard/delete-contact', 'post', 'ContactController::deleteContact');
+Router::url('dashboard/delete-contact', 'get', 'ContactController::deleteContact');
 
 
 Router::url('/', 'get', function () {

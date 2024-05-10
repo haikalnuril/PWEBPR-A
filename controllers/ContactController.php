@@ -3,6 +3,22 @@ include_once 'app/models/contact.php';
 
 class ContactController
 {
+    static function addindex(){
+        if (!isset($_SESSION['user'])) {
+            header('Location: ' . BASEURL . 'login?auth=false');
+            exit;
+        } else{
+            view('dashboard/layout', ['url'=> 'create']);
+        }
+    }
+    static function updateindex(){
+        if (!isset($_SESSION['user'])) {
+            header('Location: ' . BASEURL . 'login?auth=false');
+            exit;
+        } else{
+            view('dashboard/layout', ['url'=> 'update', 'contact'=> Contact::find($_GET['id'])]);
+        }
+    }
     static function createContact()
     {
         if (!isset($_SESSION['user'])) {
@@ -10,11 +26,12 @@ class ContactController
             exit;
         } else {
             $post = array_map('htmlspecialchars', $_POST);
-            $contact = Contact::insert([
-                'contact_name' => $post['contactName'],
-                'phone' => $post['phone'],
-                'user_id' => $_SESSION['user']['id']
-            ]);
+            $contact = Contact::insert(
+                $_SESSION['user']['id'],
+                $post['owner'],
+                $post['no_hp'],
+                $post['email'],
+            );
 
             if ($contact) {
                 header('Location: ' . BASEURL . 'dashboard');
@@ -31,12 +48,12 @@ class ContactController
             exit;
         } else {
             $post = array_map('htmlspecialchars', $_POST);
-            $contact = Contact::update([
-                'id' => $post['contactId'],
-                'contact_name' => $post['contactName'],
-                'phone' => $post['phone'],
-                'user_id' => $_SESSION['user']['id'],
-            ]);
+            $contact = Contact::update(
+                $_GET['id'],
+                $post['owner'],
+                 $post['no_hp'],
+                 $post['email'],
+            );
             if ($contact) {
                 header('Location: ' . BASEURL . 'dashboard');
             } else {
@@ -47,17 +64,13 @@ class ContactController
 
     static function deleteContact()
     {
-        if (!isset($_SESSION['user'])) {
-            header('Location: ' . BASEURL . 'login?auth=false');
-            exit;
+        $post = array_map('htmlspecialchars', $_POST);
+        $id = $_GET['id'];
+        $contact = Contact::delete($id);
+        if($contact){
+            header('Location: ' . BASEURL . 'dashboard');
         } else {
-            $post = array_map('htmlspecialchars', $_POST);
-            $contact = Contact::delete($_POST['contactId']);
-            if ($contact) {
-                header('Location: ' . BASEURL . 'dashboard');
-            } else {
-                echo ('Terjadi kesalahan');
-            }
+            echo ('Terjadi kesalahan');
         }
     }
 }
